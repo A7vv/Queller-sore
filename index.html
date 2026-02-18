@@ -34,7 +34,7 @@
         .logo { font-size: 1.6rem; font-weight: bold; }
         .logo span { color: var(--primary); }
 
-        /* شبكة المنتجات */
+        /* شبكة المنتجات الاحترافية */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -42,12 +42,15 @@
             max-width: 1400px; margin: auto;
         }
 
+        /* بطاقة المنتج */
         .product-card {
             background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.03);
             transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             border-color: var(--primary);
@@ -57,7 +60,7 @@
 
         .product-img { width: 100%; height: 180px; object-fit: cover; }
 
-        .product-content { padding: 20px; }
+        .product-content { padding: 20px; flex-grow: 1; }
         .product-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
         
         .rating-box {
@@ -70,7 +73,6 @@
 
         .price { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; }
 
-        /* زر الواتساب الاحترافي */
         .btn-order {
             background: white; color: black;
             text-decoration: none; text-align: center;
@@ -82,31 +84,24 @@
 
         /* الأيقونة العائمة */
         .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50px;
+            text-align: center; font-size: 30px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; display: flex; align-items: center; justify-content: center;
             transition: 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        footer { padding: 40px; text-align: center; color: var(--text-gray); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { padding: 40px; text-align: center; color: var(--text-gray); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="logo">QUELLER<span>.STORE</span></div>
-    <div style="font-size: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> متجر موثق</div>
+    <div style="font-size: 0.8rem;"><i class="fas fa-certificate" style="color: var(--primary);"></i> متجر موثق</div>
 </nav>
 
 <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+منتجاتكم" class="whatsapp-float" target="_blank">
@@ -123,9 +118,7 @@
                 <div class="rating-count">158 تقييم</div>
             </div>
             <div class="price">35 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 
@@ -138,9 +131,7 @@
                 <div class="rating-count">94 تقييم</div>
             </div>
             <div class="price">15 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+يوتيوب+بريميوم" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+يوتيوب+بريميوم" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 
@@ -153,16 +144,106 @@
                 <div class="rating-count">82 تقييم</div>
             </div>
             <div class="price">80 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+ChatGPT" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+ChatGPT" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Discord Nitro</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">56 تقييم</div>
+            </div>
+            <div class="price">25 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+ديسكورد+نيترو" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
     </div>
 
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1614332284683-51bbe903960a?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Spotify Premium</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">47 تقييم</div>
+            </div>
+            <div class="price">20 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+سبوتيفاي" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Steam Account</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">112 تقييم</div>
+            </div>
+            <div class="price">45 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+حساب+ستيم" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1605898835371-29488270b552?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">PSN Cards</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">35 تقييم</div>
+            </div>
+            <div class="price">40 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+بطاقات+ستور" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Canva Pro</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">29 تقييم</div>
+            </div>
+            <div class="price">10 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+كانفا+برو" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Windows 11 Key</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">74 تقييم</div>
+            </div>
+            <div class="price">30 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+مفتاح+ويندوز" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=500" class="product-img">
+        <div class="product-content">
+            <div class="product-title">Shahid VIP</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">120 تقييم</div>
+            </div>
+            <div class="price">25 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+شاهد" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+</div>
+
 <footer>
-    <p>Queller Store 2026 © جميع الحقوق محفوظة</p>
+    <div class="logo">QUELLER<span>.STORE</span></div>
+    <p>ثقة، أمان، وسرعة في التسليم.</p>
+    <div style="font-size: 0.8rem; opacity: 0.5;">2026 © جميع الحقوق محفوظة</div>
 </footer>
 
 </body>
