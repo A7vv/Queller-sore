@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queller Store | متجر كويلر</title>
+    <style>
+        :root { --main: #00f2fe; --bg: #0f0c29; }
+        body { background: var(--bg); color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+        header { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: #16213e; border-radius: 20px; padding: 25px; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { border-color: var(--main); transform: translateY(-5px); }
+        .price { font-size: 24px; color: var(--main); font-weight: bold; margin: 15px 0; }
+        .btn { display: block; background: var(--main); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💎 Queller Store</h1>
+        <p>أفضل الاشتراكات والحسابات الرقمية</p>
+    </header>
+    <div class="grid">
+        <div class="card">
+            <h3>اشتراك Netflix شهر</h3>
+            <p>أعلى جودة 4K - شاشة خاصة</p>
+            <div class="price">35 ريال</div>
+            <a href="https://wa.me/966500000000" class="btn">اطلب عبر واتساب</a>
+        </div>
+        <div class="card">
+            <h3>حساب ألعاب PC</h3>
+            <p>حسابات أصلية مع ضمان ذهبي</p>
+            <div class="price">55 ريال</div>
+            <a href="https://wa.me/966500000000" class="btn">اطلب عبر واتساب</a>
+        </div>
+    </div>
+</body>
+</html>
