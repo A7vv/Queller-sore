@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queller Store | الفخامة الرقمية</title>
+    <title>Queller Store | عالم المنتجات الرقمية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -22,7 +22,7 @@
             scroll-behavior: smooth;
         }
 
-        /* الهيدر */
+        /* نافبار فخم */
         nav {
             padding: 20px 5%;
             display: flex; justify-content: space-between; align-items: center;
@@ -31,204 +31,226 @@
             position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo { font-size: 1.6rem; font-weight: bold; letter-spacing: 1px; }
         .logo span { color: var(--primary); }
 
-        /* حاوية المنتجات */
+        /* الهيرو - واجهة ترحيبية */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-deep) 100%);
+        }
+        .hero h1 { font-size: 2.5rem; margin: 0; }
+        .hero p { color: var(--text-gray); font-size: 1.1rem; margin-top: 10px; }
+
+        /* شبكة المنتجات الاحترافية */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px; padding: 40px 5%;
-            max-width: 1200px; margin: auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; padding: 40px 5%;
+            max-width: 1400px; margin: auto;
         }
 
-        /* بطاقة المنتج المطورة بالصور */
+        /* بطاقة المنتج */
         .product-card {
             background: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.03);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             border-color: var(--primary);
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .product-img-container {
+        .product-img {
             width: 100%;
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        .product-img-container img {
-            width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
-            transition: 0.5s;
-        }
-        .product-card:hover .product-img-container img {
-            transform: scale(1.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .product-content { padding: 25px; }
-        .product-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
-
+        .product-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        
         /* نظام التقييم */
         .rating-box {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 15px; background: rgba(255,255,255,0.02);
+            padding: 8px 12px; border-radius: 10px;
         }
-        .stars { display: flex; flex-direction: row-reverse; gap: 4px; }
-        .stars i { color: #333; cursor: pointer; font-size: 18px; transition: 0.3s; }
-        .stars i:hover, .stars i:hover ~ i, .stars i.active { color: var(--star-color); }
-        .rating-text { font-size: 0.85rem; color: var(--text-gray); }
+        .stars { color: var(--star-color); font-size: 0.8rem; }
+        .rating-count { font-size: 0.75rem; color: var(--text-gray); }
 
-        .price-tag { 
-            font-size: 1.6rem; 
-            font-weight: 800; 
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+        .price { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; }
+        .price span { font-size: 0.8rem; color: var(--text-gray); }
 
-        /* زر الطلب الاحترافي */
+        /* أزرار الطلب */
         .btn-order {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 16px;
-            font-weight: 700;
-            transition: 0.3s;
+            background: white; color: black;
+            text-decoration: none; text-align: center;
+            padding: 12px; border-radius: 12px;
+            font-weight: bold; transition: 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
         }
-        .btn-order:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
-        }
+        .btn-order:hover { background: var(--primary); color: white; }
 
-        /* التذييل */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--card-bg);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            margin-top: 50px;
-        }
+        footer { padding: 40px; text-align: center; color: var(--text-gray); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="logo">QUELLER<span>.STORE</span></div>
-    <div style="font-size: 0.9rem; color: var(--text-gray);">
-        <i class="fas fa-check-circle" style="color: var(--primary);"></i> متجر رسمي
-    </div>
+    <div style="font-size: 0.8rem;"><i class="fas fa-shield-alt" style="color: var(--primary);"></i> ضمان ذهبي</div>
 </nav>
+
+<section class="hero">
+    <h1>فخامة الخدمات <span>الرقمية</span></h1>
+    <p>أكثر من 10 خدمات متميزة بأسعار تنافسية وتسليم فوري</p>
+</section>
 
 <div class="products-grid">
     <div class="product-card">
-        <div class="product-img-container">
-            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop" alt="Netflix Premium">
-        </div>
+        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=500" class="product-img" alt="Netflix">
         <div class="product-content">
             <div class="product-title">Netflix Premium</div>
             <div class="rating-box">
-                <div class="stars" data-product="netflix">
-                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
-                </div>
-                <div class="rating-text">تقييمات: <span id="count-netflix">158</span></div>
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">158 تقييم</div>
             </div>
-            <div class="price-tag">35 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <div class="price">35 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+نتفلكس" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 
     <div class="product-card">
-        <div class="product-img-container">
-            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="YouTube Premium">
-        </div>
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=500" class="product-img" alt="YouTube">
         <div class="product-content">
             <div class="product-title">YouTube Premium</div>
             <div class="rating-box">
-                <div class="stars" data-product="youtube">
-                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
-                </div>
-                <div class="rating-text">تقييمات: <span id="count-youtube">94</span></div>
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">94 تقييم</div>
             </div>
-            <div class="price-tag">15 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+يوتيوب+بريميوم" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <div class="price">15 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+يوتيوب" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 
     <div class="product-card">
-        <div class="product-img-container">
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="ChatGPT Plus">
-        </div>
+        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=500" class="product-img" alt="Discord">
         <div class="product-content">
-            <div class="product-title">ChatGPT Plus (GPT-4)</div>
+            <div class="product-title">Discord Nitro</div>
             <div class="rating-box">
-                <div class="stars" data-product="chatgpt">
-                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
-                </div>
-                <div class="rating-text">تقييمات: <span id="count-chatgpt">62</span></div>
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">56 تقييم</div>
             </div>
-            <div class="price-tag">80 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+ChatGPT" class="btn-order">
-                <i class="fab fa-whatsapp"></i> اطلب الآن
-            </a>
+            <div class="price">25 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+نيترو" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=500" class="product-img" alt="ChatGPT">
+        <div class="product-content">
+            <div class="product-title">ChatGPT Plus</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">82 تقييم</div>
+            </div>
+            <div class="price">80 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+ChatGPT" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1614332284683-51bbe903960a?q=80&w=500" class="product-img" alt="Spotify">
+        <div class="product-content">
+            <div class="product-title">Spotify Premium</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">47 تقييم</div>
+            </div>
+            <div class="price">20 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+سبوتيفاي" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500" class="product-img" alt="Gaming">
+        <div class="product-content">
+            <div class="product-title">حساب Steam عشوائي</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">112 تقييم</div>
+            </div>
+            <div class="price">45 <span>ر.س</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+حساب+ستيم" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1605898835371-29488270b552?q=80&w=500" class="product-img" alt="PSN">
+        <div class="product-content">
+            <div class="product-title">بطاقات ستور PSN</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">35 تقييم</div>
+            </div>
+            <div class="price">تبدأ 40 <span>ر.س</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+بطاقة+PSN" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=500" class="product-img" alt="Canva">
+        <div class="product-content">
+            <div class="product-title">Canva Pro</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">29 تقييم</div>
+            </div>
+            <div class="price">10 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+كانفا" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500" class="product-img" alt="Windows">
+        <div class="product-content">
+            <div class="product-title">Windows 11 Key</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">74 تقييم</div>
+            </div>
+            <div class="price">30 <span>ر.س</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+مفتاح+ويندوز" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=500" class="product-img" alt="Education">
+        <div class="product-content">
+            <div class="product-title">اشتراك شاهد VIP</div>
+            <div class="rating-box">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="rating-count">120 تقييم</div>
+            </div>
+            <div class="price">25 <span>ر.س / شهر</span></div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+أريد+اشتراك+شاهد" class="btn-order"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
         </div>
     </div>
 </div>
 
 <footer>
-    <div style="font-size: 1.2rem; margin-bottom: 20px;">QUELLER<span>.STORE</span></div>
-    <p style="color: var(--text-gray);">ثقة، أمان، وسرعة في التسليم.</p>
-    <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">2026 © جميع الحقوق محفوظة</div>
+    <div class="logo">QUELLER<span>.STORE</span></div>
+    <p>ثقة، أمان، وسرعة في التسليم.</p>
+    <div style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">2026 © جميع الحقوق محفوظة لمتجر كويلر</div>
 </footer>
-
-<script>
-    function rate(starElement, rating) {
-        const container = starElement.parentElement;
-        const stars = container.querySelectorAll('i');
-        const productId = container.getAttribute('data-product');
-        const countSpan = document.getElementById('count-' + productId);
-
-        stars.forEach(s => s.classList.remove('active'));
-        stars.forEach((s, index) => {
-            if (5 - index <= rating) s.classList.add('active');
-        });
-
-        countSpan.innerText = parseInt(countSpan.innerText) + 1;
-        alert("شكراً لتقييمك بـ " + rating + " نجوم! رأيك يهمنا.");
-    }
-</script>
 
 </body>
 </html>
