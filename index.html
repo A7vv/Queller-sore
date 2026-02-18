@@ -22,6 +22,7 @@
             scroll-behavior: smooth;
         }
 
+        /* الهيدر */
         nav {
             padding: 20px 5%;
             display: flex; justify-content: space-between; align-items: center;
@@ -33,166 +34,187 @@
         .logo { font-size: 1.5rem; font-weight: bold; }
         .logo span { color: var(--primary); }
 
+        /* حاوية المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px; padding: 40px 5%;
             max-width: 1200px; margin: auto;
         }
 
+        /* بطاقة المنتج المطورة بالصور */
         .product-card {
             background: var(--card-bg);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.03);
-            transition: 0.4s ease;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .product-card:hover {
             border-color: var(--primary);
-            transform: translateY(-8px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
-        .product-image {
+        .product-img-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-img-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.5s;
+        }
+        .product-card:hover .product-img-container img {
+            transform: scale(1.1);
         }
 
         .product-content { padding: 25px; }
+        .product-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
 
-        .rating-section {
-            margin: 15px 0;
-            background: rgba(255,255,255,0.02);
-            padding: 10px;
-            border-radius: 12px;
+        /* نظام التقييم */
+        .rating-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 20px;
         }
-        .stars-interactive {
-            display: flex;
-            flex-direction: row-reverse;
-            gap: 5px;
-        }
-        .stars-interactive i {
-            color: #333;
-            cursor: pointer;
-            transition: 0.2s;
-            font-size: 18px;
-        }
-        .stars-interactive i:hover, .stars-interactive i:hover ~ i, .stars-interactive i.active {
-            color: var(--star-color);
+        .stars { display: flex; flex-direction: row-reverse; gap: 4px; }
+        .stars i { color: #333; cursor: pointer; font-size: 18px; transition: 0.3s; }
+        .stars i:hover, .stars i:hover ~ i, .stars i.active { color: var(--star-color); }
+        .rating-text { font-size: 0.85rem; color: var(--text-gray); }
+
+        .price-tag { 
+            font-size: 1.6rem; 
+            font-weight: 800; 
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
-        .price-tag { font-size: 1.5rem; font-weight: bold; margin: 10px 0; color: white; }
-        
+        /* زر الطلب الاحترافي */
         .btn-order {
-            display: block;
-            background: white; color: black;
-            text-decoration: none; text-align: center;
-            padding: 14px; border-radius: 14px; font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 16px;
+            font-weight: 700;
             transition: 0.3s;
         }
-        .btn-order:hover { background: var(--primary); color: white; }
+        .btn-order:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        }
 
-        .contact-section {
+        /* التذييل */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
             background: var(--card-bg);
-            padding: 60px 5%; text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 50px;
         }
-        .social-group { display: flex; justify-content: center; gap: 20px; margin-top: 25px; }
-        .social-item {
-            text-decoration: none; color: white; background: rgba(255,255,255,0.05);
-            padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 8px;
-            transition: 0.3s;
-        }
-        .social-item:hover { background: rgba(0, 210, 255, 0.2); }
-
-        footer { padding: 40px; text-align: center; color: var(--text-gray); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">QUELLER<span>.</span></div>
-    <div style="font-size: 0.8rem; color: var(--text-gray);"><i class="fas fa-certificate" style="color: var(--primary);"></i> متجر موثق</div>
+    <div class="logo">QUELLER<span>.STORE</span></div>
+    <div style="font-size: 0.9rem; color: var(--text-gray);">
+        <i class="fas fa-check-circle" style="color: var(--primary);"></i> متجر رسمي
+    </div>
 </nav>
 
 <div class="products-grid">
     <div class="product-card">
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/8711251219054763925_0" alt="Netflix" class="product-image">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop" alt="Netflix Premium">
+        </div>
         <div class="product-content">
-            <h3>Netflix Premium</h3>
-            <div class="rating-section">
-                <div class="stars-interactive" data-product="netflix">
-                    <i class="fas fa-star" onclick="rateProduct(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 1)"></i>
+            <div class="product-title">Netflix Premium</div>
+            <div class="rating-box">
+                <div class="stars" data-product="netflix">
+                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
                 </div>
-                <div class="rating-count">تقييم حقيقي: <span id="count-netflix">42</span></div>
+                <div class="rating-text">تقييمات: <span id="count-netflix">158</span></div>
             </div>
             <div class="price-tag">35 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order">اطلب الآن</a>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order">
+                <i class="fab fa-whatsapp"></i> اطلب الآن
+            </a>
         </div>
     </div>
 
     <div class="product-card">
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/8064327228935132585_2" alt="YouTube" class="product-image">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="YouTube Premium">
+        </div>
         <div class="product-content">
-            <h3>YouTube Premium</h3>
-            <div class="rating-section">
-                <div class="stars-interactive" data-product="youtube">
-                    <i class="fas fa-star" onclick="rateProduct(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 1)"></i>
+            <div class="product-title">YouTube Premium</div>
+            <div class="rating-box">
+                <div class="stars" data-product="youtube">
+                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
                 </div>
-                <div class="rating-count">تقييم حقيقي: <span id="count-youtube">38</span></div>
+                <div class="rating-text">تقييمات: <span id="count-youtube">94</span></div>
             </div>
             <div class="price-tag">15 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+يوتيوب+بريميوم" class="btn-order">اطلب الآن</a>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+يوتيوب+بريميوم" class="btn-order">
+                <i class="fab fa-whatsapp"></i> اطلب الآن
+            </a>
         </div>
     </div>
 
     <div class="product-card">
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/6715942781341392629_1" alt="Discord" class="product-image">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="ChatGPT Plus">
+        </div>
         <div class="product-content">
-            <h3>Discord Nitro</h3>
-            <div class="rating-section">
-                <div class="stars-interactive" data-product="discord">
-                    <i class="fas fa-star" onclick="rateProduct(this, 5)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 4)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 3)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 2)"></i>
-                    <i class="fas fa-star" onclick="rateProduct(this, 1)"></i>
+            <div class="product-title">ChatGPT Plus (GPT-4)</div>
+            <div class="rating-box">
+                <div class="stars" data-product="chatgpt">
+                    <i class="fas fa-star" onclick="rate(this, 5)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 4)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 3)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 2)"></i>
+                    <i class="fas fa-star" onclick="rate(this, 1)"></i>
                 </div>
-                <div class="rating-count">تقييم حقيقي: <span id="count-discord">56</span></div>
+                <div class="rating-text">تقييمات: <span id="count-chatgpt">62</span></div>
             </div>
-            <div class="price-tag">25 ر.س</div>
-            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+ديسكورد+نيترو" class="btn-order">اطلب الآن</a>
+            <div class="price-tag">80 ر.س</div>
+            <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+ChatGPT" class="btn-order">
+                <i class="fab fa-whatsapp"></i> اطلب الآن
+            </a>
         </div>
     </div>
 </div>
 
-<section class="contact-section">
-    <h2>تواصل مباشر مع الإدارة</h2>
-    <div class="social-group">
-        <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+منتجاتكم" class="social-item">
-            <i class="fab fa-whatsapp" style="color: #25d366;"></i> واتساب المتجر
-        </a>
-    </div>
-</section>
-
 <footer>
-    <p>Queller Store 2026 © جميع الحقوق محفوظة لمتجر كويلر</p>
+    <div style="font-size: 1.2rem; margin-bottom: 20px;">QUELLER<span>.STORE</span></div>
+    <p style="color: var(--text-gray);">ثقة، أمان، وسرعة في التسليم.</p>
+    <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">2026 © جميع الحقوق محفوظة</div>
 </footer>
 
 <script>
-    function rateProduct(starElement, rating) {
+    function rate(starElement, rating) {
         const container = starElement.parentElement;
         const stars = container.querySelectorAll('i');
         const productId = container.getAttribute('data-product');
@@ -204,7 +226,7 @@
         });
 
         countSpan.innerText = parseInt(countSpan.innerText) + 1;
-        alert("شكراً لثقتك بمتجر كويلر! تم تسجيل تقييمك بـ " + rating + " نجوم.");
+        alert("شكراً لتقييمك بـ " + rating + " نجوم! رأيك يهمنا.");
     }
 </script>
 
