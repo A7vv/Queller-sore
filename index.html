@@ -98,7 +98,14 @@
     <div class="logo">QUELLER<span>.STORE</span></div>
     <div style="font-size: 0.8rem;"><i class="fas fa-certificate" style="color: var(--primary);"></i> متجر موثق</div>
 </nav>
-
+<div style="padding: 20px 5%; max-width: 600px; margin: auto;">
+    <div style="position: relative;">
+        <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن منتجك المفضل..." 
+        style="width: 100%; padding: 15px 45px 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #141417; color: white; font-family: 'Cairo'; outline: none; transition: 0.3s; text-align: right;">
+        <i class="fas fa-search" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #00d2ff;"></i>
+    </div>
+</div>
+    
 <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+منتجاتكم" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
@@ -240,6 +247,25 @@
     <p>ثقة، أمان، وسرعة في التسليم.</p>
     <div style="font-size: 0.8rem; opacity: 0.5;">2026 © جميع الحقوق محفوظة</div>
 </footer>
+<script>
+function searchProducts() {
+    // جلب النص من مربع البحث الذي أضفته في السطر 101
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    // جلب جميع بطاقات المنتجات الموزعة في الصفحة
+    let cards = document.getElementsByClassName('product-card');
 
+    for (let i = 0; i < cards.length; i++) {
+        // قراءة اسم المنتج (مثل Netflix أو Spotify)
+        let title = cards[i].querySelector('.product-title').innerText.toLowerCase();
+        
+        // إظهار المنتج إذا كان الاسم يحتوي على ما كتبه العميل، وإلا يتم إخفاؤه
+        if (title.includes(input)) {
+            cards[i].style.display = ""; 
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
