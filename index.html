@@ -4,35 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queller Store | متجر كويلر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main: #00f2fe; --bg: #0f0c29; }
-        body { background: var(--bg); color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
-        header { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
-        .card { background: #16213e; border-radius: 20px; padding: 25px; border: 1px solid #333; transition: 0.3s; }
-        .card:hover { border-color: var(--main); transform: translateY(-5px); }
-        .price { font-size: 24px; color: var(--main); font-weight: bold; margin: 15px 0; }
-        .btn { display: block; background: var(--main); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; }
+        :root {
+            --main-color: #00f2fe;
+            --accent-color: #712eff;
+            --bg-dark: #0f0c29;
+            --card-bg: #1a1a2e;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        /* الهيدر */
+        header {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            text-align: center;
+            border-bottom: 3px solid var(--main-color);
+        }
+        .logo { font-size: 3rem; margin-bottom: 10px; }
+        .store-name { font-size: 2.2rem; font-weight: bold; color: var(--main-color); margin: 0; }
+        .store-tagline { font-size: 1rem; opacity: 0.8; margin-top: 10px; }
+
+        /* حاوية المنتجات */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        /* بطاقة المنتج */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--main-color);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
+        }
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .card h3 { margin: 15px 0 10px; font-size: 1.4rem; color: #fff; }
+        .card p { font-size: 0.9rem; color: #ccc; height: 50px; }
+        .price { font-size: 1.8rem; font-weight: bold; color: var(--main-color); margin: 15px 0; }
+        .btn {
+            display: block;
+            background: linear-gradient(90deg, var(--main-color), #4facfe);
+            color: #000;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { filter: brightness(1.2); }
+
+        /* قسم المميزات */
+        .features {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px 20px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-item { text-align: center; max-width: 200px; }
+        .feature-item i { font-size: 2rem; color: var(--main-color); }
+
+        footer { padding: 40px; text-align: center; opacity: 0.6; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>💎 Queller Store</h1>
-        <p>أفضل الاشتراكات والحسابات الرقمية</p>
-    </header>
-    <div class="grid">
-        <div class="card">
-            <h3>اشتراك Netflix شهر</h3>
-            <p>أعلى جودة 4K - شاشة خاصة</p>
-            <div class="price">35 ريال</div>
-            <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+نيتفلكس" class="btn">اطلب عبر واتساب</a>
-        </div>
-        <div class="card">
-            <h3>حساب ألعاب PC</h3>
-            <p>حسابات أصلية مع ضمان ذهبي</p>
-            <div class="price">55 ريال</div>
-            <a href="https://wa.me/966502915924?text=أريد+شراء+حساب+ألعاب" class="btn">اطلب عبر واتساب</a>
-        </div>
+
+<header>
+    <div class="logo">💎</div>
+    <h1 class="store-name">QUELLER STORE</h1>
+    <p class="store-tagline">متجرك الموثوق للحسابات والاشتراكات الرقمية بأفضل الأسعار</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <span class="badge">الأكثر طلباً</span>
+        <h3>اشتراك Netflix Premium</h3>
+        <p>جودة 4K Ultra HD - شاشة خاصة - ضمان كامل المدة</p>
+        <div class="price">35 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+نيتفلكس" class="btn">شراء عبر واتساب</a>
     </div>
+
+    <div class="card">
+        <h3>YouTube Premium</h3>
+        <p>بدون إعلانات - تشغيل في الخلفية - اشتراك رسمي على إيميلك</p>
+        <div class="price">15 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+يوتيوب+بريميوم" class="btn">شراء عبر واتساب</a>
+    </div>
+
+    <div class="card">
+        <span class="badge">جديد</span>
+        <h3>حساب Steam عشوائي</h3>
+        <p>حسابات تحتوي على ألعاب قوية (GTA V, RDR2) مضمونة</p>
+        <div class="price">45 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+حساب+ستيم" class="btn">شراء عبر واتساب</a>
+    </div>
+
+    <div class="card">
+        <h3>اشتراك ChatGPT Plus</h3>
+        <p>الوصول لـ GPT-4 وحل المشاكل البرمجية والذكاء الاصطناعي</p>
+        <div class="price">80 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+ذكاء+اصطناعي" class="btn">شراء عبر واتساب</a>
+    </div>
+
+    <div class="card">
+        <h3>نيترو ديسكورد (Nitro)</h3>
+        <p>اشتراك شهر كامل - جميع المميزات والبوستات مفتوحة</p>
+        <div class="price">25 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+نيترو+ديسكورد" class="btn">شراء عبر واتساب</a>
+    </div>
+
+    <div class="card">
+        <span class="badge">ضمان ذهبي</span>
+        <h3>بطاقات ستور PSN</h3>
+        <p>بطاقات شحن رصيد سعودي/أمريكي لجميع الفئات</p>
+        <div class="price">تبدأ من 40 ريال</div>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+بطاقة+ستور" class="btn">شراء عبر واتساب</a>
+    </div>
+</div>
+
+<section class="features">
+    <div class="feature-item">
+        <h3>⚡ تسليم سريع</h3>
+        <p>نرسل لك الحساب فور الدفع</p>
+    </div>
+    <div class="feature-item">
+        <h3>🔐 ضمان ذهبي</h3>
+        <p>تعويض فوري في حال تعطل الخدمة</p>
+    </div>
+    <div class="feature-item">
+        <h3>📞 دعم 24/7</h3>
+        <p>متواجدون دائماً لخدمتك عبر واتساب</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Queller Store. جميع الحقوق محفوظة لمتجر كويلر.</p>
+</footer>
+
 </body>
 </html>
