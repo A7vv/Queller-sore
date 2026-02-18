@@ -5,170 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queller Store | متجر كويلر</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --main-color: #00f2fe;
             --accent-color: #712eff;
             --bg-dark: #0f0c29;
             --card-bg: #1a1a2e;
+            --whatsapp-green: #25d366;
         }
         body {
             background-color: var(--bg-dark);
             color: white;
             font-family: 'Cairo', sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             line-height: 1.6;
         }
-        /* الهيدر */
         header {
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0f0c29, #302b63);
             text-align: center;
             border-bottom: 3px solid var(--main-color);
         }
-        .logo { font-size: 3rem; margin-bottom: 10px; }
-        .store-name { font-size: 2.2rem; font-weight: bold; color: var(--main-color); margin: 0; }
-        .store-tagline { font-size: 1rem; opacity: 0.8; margin-top: 10px; }
-
-        /* حاوية المنتجات */
+        .store-name { font-size: 2.5rem; font-weight: bold; color: var(--main-color); margin: 0; }
+        
         .container {
             max-width: 1100px;
             margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             padding: 20px;
         }
-
-        /* بطاقة المنتج */
         .card {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
+            transition: 0.3s;
         }
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--main-color);
-            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
         }
-        .badge {
-            background: var(--accent-color);
-            color: white;
-            font-size: 12px;
-            padding: 5px 12px;
-            border-radius: 50px;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-        }
-        .card h3 { margin: 15px 0 10px; font-size: 1.4rem; color: #fff; }
-        .card p { font-size: 0.9rem; color: #ccc; height: 50px; }
         .price { font-size: 1.8rem; font-weight: bold; color: var(--main-color); margin: 15px 0; }
         .btn {
             display: block;
             background: linear-gradient(90deg, var(--main-color), #4facfe);
             color: #000;
             text-decoration: none;
-            padding: 12px;
+            padding: 15px;
             border-radius: 12px;
             font-weight: bold;
+        }
+        
+        /* أيقونة الواتساب العائمة */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
             transition: 0.3s;
         }
-        .btn:hover { filter: brightness(1.2); }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
 
-        /* قسم المميزات */
         .features {
             background: rgba(255, 255, 255, 0.03);
             padding: 40px 20px;
-            margin-top: 50px;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
+            text-align: center;
         }
-        .feature-item { text-align: center; max-width: 200px; }
-        .feature-item i { font-size: 2rem; color: var(--main-color); }
-
-        footer { padding: 40px; text-align: center; opacity: 0.6; font-size: 0.8rem; }
+        footer { padding: 30px; text-align: center; opacity: 0.6; }
     </style>
 </head>
 <body>
 
+<a href="https://wa.me/966502915924" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 <header>
-    <div class="logo">💎</div>
-    <h1 class="store-name">QUELLER STORE</h1>
-    <p class="store-tagline">متجرك الموثوق للحسابات والاشتراكات الرقمية بأفضل الأسعار</p>
+    <h1 class="store-name">💎 QUELLER STORE</h1>
+    <p>أفضل الخدمات الرقمية والاشتراكات في مكان واحد</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <span class="badge">الأكثر طلباً</span>
         <h3>اشتراك Netflix Premium</h3>
-        <p>جودة 4K Ultra HD - شاشة خاصة - ضمان كامل المدة</p>
+        <p>شاشة خاصة - جودة 4K - ضمان كامل</p>
         <div class="price">35 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+نيتفلكس" class="btn">شراء عبر واتساب</a>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+نيتفلكس" class="btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
 
     <div class="card">
         <h3>YouTube Premium</h3>
-        <p>بدون إعلانات - تشغيل في الخلفية - اشتراك رسمي على إيميلك</p>
+        <p>بدون إعلانات - اشتراك رسمي مضمون</p>
         <div class="price">15 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+يوتيوب+بريميوم" class="btn">شراء عبر واتساب</a>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+يوتيوب+بريميوم" class="btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
 
     <div class="card">
-        <span class="badge">جديد</span>
         <h3>حساب Steam عشوائي</h3>
-        <p>حسابات تحتوي على ألعاب قوية (GTA V, RDR2) مضمونة</p>
+        <p>حسابات تحتوي على ألعاب قوية أصلية</p>
         <div class="price">45 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+حساب+ستيم" class="btn">شراء عبر واتساب</a>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+حساب+ستيم" class="btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
 
     <div class="card">
-        <h3>اشتراك ChatGPT Plus</h3>
-        <p>الوصول لـ GPT-4 وحل المشاكل البرمجية والذكاء الاصطناعي</p>
+        <h3>ChatGPT Plus</h3>
+        <p>الوصول لذكاء اصطناعي GPT-4</p>
         <div class="price">80 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+اشتراك+ذكاء+اصطناعي" class="btn">شراء عبر واتساب</a>
-    </div>
-
-    <div class="card">
-        <h3>نيترو ديسكورد (Nitro)</h3>
-        <p>اشتراك شهر كامل - جميع المميزات والبوستات مفتوحة</p>
-        <div class="price">25 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+نيترو+ديسكورد" class="btn">شراء عبر واتساب</a>
-    </div>
-
-    <div class="card">
-        <span class="badge">ضمان ذهبي</span>
-        <h3>بطاقات ستور PSN</h3>
-        <p>بطاقات شحن رصيد سعودي/أمريكي لجميع الفئات</p>
-        <div class="price">تبدأ من 40 ريال</div>
-        <a href="https://wa.me/966502915924?text=أريد+شراء+بطاقة+ستور" class="btn">شراء عبر واتساب</a>
+        <a href="https://wa.me/966502915924?text=أريد+شراء+ChatGPT" class="btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
 </div>
 
 <section class="features">
-    <div class="feature-item">
-        <h3>⚡ تسليم سريع</h3>
-        <p>نرسل لك الحساب فور الدفع</p>
+    <div>
+        <i class="fas fa-bolt" style="color: var(--main-color); font-size: 2rem;"></i>
+        <h3>تسليم فوري</h3>
     </div>
-    <div class="feature-item">
-        <h3>🔐 ضمان ذهبي</h3>
-        <p>تعويض فوري في حال تعطل الخدمة</p>
+    <div>
+        <i class="fas fa-shield-alt" style="color: var(--main-color); font-size: 2rem;"></i>
+        <h3>ضمان ذهبي</h3>
     </div>
-    <div class="feature-item">
-        <h3>📞 دعم 24/7</h3>
-        <p>متواجدون دائماً لخدمتك عبر واتساب</p>
+    <div>
+        <i class="fas fa-headset" style="color: var(--main-color); font-size: 2rem;"></i>
+        <h3>دعم مستمر</h3>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Queller Store. جميع الحقوق محفوظة لمتجر كويلر.</p>
+    <p>© 2026 Queller Store. جميع الحقوق محفوظة.</p>
 </footer>
 
 </body>
