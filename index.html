@@ -154,40 +154,39 @@
         .social-circle:hover { background: #00d2ff; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3); }
         .footer-contact { display: block; color: #a0a0a5; text-decoration: none; margin-bottom: 10px; font-size: 0.9rem; }
         .footer-contact i { color: #00d2ff; margin-left: 8px; }
-/* تنسيق النوافذ المنبثقة الأنيقة */
+        
+/* تنسيق النوافذ المنبثقة */
         .modal {
             display: none; 
             position: fixed; 
-            z-index: 9999; 
+            z-index: 1000; 
             left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(8px); /* تأثير تغبيش خلفية المتجر */
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
         }
         .modal-content {
-            background: linear-gradient(145deg, #111, #050505);
-            margin: 15% auto;
-            padding: 35px;
-            border: 1px solid rgba(0, 210, 255, 0.3);
-            width: 85%;
-            max-width: 550px;
-            border-radius: 20px;
+            background-color: #111;
+            margin: 10% auto;
+            padding: 30px;
+            border: 1px solid #00d2ff;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 15px;
             text-align: right;
             color: #fff;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: modalFade 0.4s ease;
+            animation: slideDown 0.4s ease;
         }
-        @keyframes modalFade {
-            from { transform: translateY(-30px); opacity: 0; }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         .close-btn {
-            position: absolute;
-            top: 15px; left: 20px;
-            color: #666;
-            font-size: 24px;
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
         }
         .close-btn:hover { color: #00d2ff; }
 
@@ -378,20 +377,20 @@
         <div class="footer-section">
             <h4 style="color:#fff; margin-bottom:20px; border-bottom: 2px solid #00d2ff; display: inline-block; padding-bottom: 5px;">روابط هامة</h4>
             <a href="#" class="footer-contact">الرئيسية</a>
-            <a href="javascript:void(0)" onclick="openModal('warrantyModal')" class="footer-contact">سياسة الضمان</a>
-            <a href="javascript:void(0)" onclick="openModal('aboutModal')" class="footer-contact">من نحن</a>
+           <a href="javascript:void(0)" onclick="openModal('warrantyModal')" class="footer-contact">سياسة الضمان</a>
+<a href="javascript:void(0)" onclick="openModal('aboutModal')" class="footer-contact">من نحن</a>
         </div>
     </div>
     
     <div style="text-align:center; margin-top:50px; color:#555; font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px;">
         &copy; 2026 جميع الحقوق محفوظة لـ QUELLER.STORE
     </div>
-    <div id="aboutModal" class="modal">
+  <div id="aboutModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('aboutModal')">&times;</span>
-        <h3 style="color:#00d2ff; margin-bottom:15px; font-size:1.5rem;">من نحن</h3>
-        <p style="line-height:1.8; color:#a0a0a5; font-size:0.95rem;">
-            مرحباً بكم في <b>Queller Store</b>. نحن فريق متخصص يسعى لتوفير أفضل الحلول الرقمية والاشتراكات بأعلى مستويات الموثوقية. هدفنا هو توفير تجربة ترفيهية مميزة بأسعار تنافسية مع دعم فني متكامل يضع العميل دائماً في المقام الأول.
+        <h2 style="color:#00d2ff; margin-bottom:15px;">من نحن</h2>
+        <p style="line-height:1.8; color:#a0a0a5;">
+            نحن متجر <b>Queller</b>، متخصصون في تقديم الحلول الرقمية والاشتراكات بأعلى معايير الجودة. انطلقنا بشغف لتسهيل الوصول للخدمات الترفيهية والتعليمية بأسعار تنافسية ودعم فني عربي مخصص على مدار الساعة.
         </p>
     </div>
 </div>
@@ -399,9 +398,9 @@
 <div id="warrantyModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('warrantyModal')">&times;</span>
-        <h3 style="color:#00d2ff; margin-bottom:15px; font-size:1.5rem;">سياسة الضمان الذهبية</h3>
-        <p style="line-height:1.8; color:#a0a0a5; font-size:0.95rem;">
-            ثقتكم هي أغلى ما نملك، لذا نقدم لكم ضماناً ذهبياً وشاملاً على جميع منتجاتنا. في حال حدوث أي عطل، نلتزم بتعويضكم أو استبدال الخدمة فوراً خلال 24 ساعة كحد أقصى لضمان استمرار تجربتكم بدون انقطاع.
+        <h2 style="color:#00d2ff; margin-bottom:15px;">سياسة الضمان</h2>
+        <p style="line-height:1.8; color:#a0a0a5;">
+            في Queller، نضمن لك حقك كاملاً. جميع اشتراكاتنا تشمل ضماناً ذهبياً طوال فترة الاشتراك. في حال واجهت أي مشكلة تقنية، نلتزم بتعويضك أو حل المشكلة خلال أقل من 24 ساعة، لأن رضاكم هو رأس مالنا.
         </p>
     </div>
 </div>
