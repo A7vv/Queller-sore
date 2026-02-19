@@ -407,11 +407,11 @@
 </div>
 </footer>
 <script>
-    // دالة فتح النوافذ المنبثقة
+// دالة فتح النوافذ المنبثقة
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = "block";
+        modal.style.display = "flex";
         document.body.style.overflow = "hidden"; // منع التمرير خلف النافذة
     }
 }
@@ -421,19 +421,19 @@ function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // إعادة التمرير لوضعه الطبيعي
+        document.body.style.overflow = "auto";
     }
 }
 
-// نظام التقييمات الاحترافي
+// نظام التقييمات التفاعلي
 let currentProductId = '';
 
 function openReviews(productId, productName) {
     currentProductId = productId;
-    const title = document.getElementById('modal_product_title');
-    if (title) title.innerText = `تقييمات ${productName} ⭐`;
-    displayReviews(); // عرض التقييمات المخزنة
-    openModal('reviews_modal'); // فتح نافذة التقييمات
+    const titleElement = document.getElementById('modal_product_title');
+    if (titleElement) titleElement.innerText = `تقييمات ${productName} ⭐`;
+    displayReviews();
+    openModal('reviews_modal');
 }
 
 function submitReview() {
@@ -462,15 +462,15 @@ function displayReviews() {
     const reviews = storeData[currentProductId] || [];
     
     container.innerHTML = reviews.length ? reviews.map(r => `
-        <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:10px; margin-bottom:8px; border-right:3px solid #00d2ff; text-align:right;">
-            <strong style="color:#00d2ff; font-size:0.9rem;">${r.name}</strong>
-            <p style="margin:5px 0; font-size:0.85rem; color:#eee;">${r.msg}</p>
+        <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px; margin-bottom:10px; border-right:4px solid #00d2ff; text-align:right;">
+            <strong style="color:#00d2ff; display:block; margin-bottom:4px;">${r.name}</strong>
+            <p style="margin:0; font-size:0.9rem; color:#ccc;">${r.msg}</p>
             <small style="color:#555; font-size:0.7rem;">${r.date}</small>
         </div>
-    `).join('') : '<p style="text-align:center; color:#555; padding:10px;">لا توجد تقييمات بعد.. كن الأول!</p>';
+    `).join('') : '<p style="text-align:center; color:#666; padding:20px;">كن أول من يترك تقييماً أسطورياً!</p>';
 }
 
-// إغلاق النافذة عند الضغط خارج منطقة النص
+// إغلاق النافذة عند الضغط خارجها
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = "none";
