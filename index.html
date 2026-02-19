@@ -406,77 +406,18 @@
 </div>
 </footer>
 <script>
-// دالة فتح النوافذ المنبثقة
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // منع التمرير خلف النافذة
-    }
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
 }
 
-// دالة إغلاق النوافذ
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
-
-// نظام التقييمات التفاعلي
-let currentProductId = '';
-
-function openReviews(productId, productName) {
-    currentProductId = productId;
-    const titleElement = document.getElementById('modal_product_title');
-    if (titleElement) titleElement.innerText = `تقييمات ${productName} ⭐`;
-    displayReviews();
-    openModal('reviews_modal');
-}
-
-function submitReview() {
-    const nameInput = document.getElementById('reviewer_name');
-    const msgInput = document.getElementById('reviewer_msg');
-    const name = nameInput.value.trim();
-    const msg = msgInput.value.trim();
-    
-    if(!name || !msg) return alert("يا بطل، اكتب اسمك ورأيك أولاً!");
-
-    const review = { name, msg, date: new Date().toLocaleDateString('ar-SA') };
-    let storeData = JSON.parse(localStorage.getItem('queller_reviews') || '{}');
-    
-    if(!storeData[currentProductId]) storeData[currentProductId] = [];
-    storeData[currentProductId].unshift(review);
-    localStorage.setItem('queller_reviews', JSON.stringify(storeData));
-    
-    nameInput.value = '';
-    msgInput.value = '';
-    displayReviews();
-}
-
-function displayReviews() {
-    const container = document.getElementById('reviews_container');
-    const storeData = JSON.parse(localStorage.getItem('queller_reviews') || '{}');
-    const reviews = storeData[currentProductId] || [];
-    
-    container.innerHTML = reviews.length ? reviews.map(r => `
-        <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px; margin-bottom:10px; border-right:4px solid #00d2ff; text-align:right;">
-            <strong style="color:#00d2ff; display:block; margin-bottom:4px;">${r.name}</strong>
-            <p style="margin:0; font-size:0.9rem; color:#ccc;">${r.msg}</p>
-            <small style="color:#555; font-size:0.7rem;">${r.date}</small>
-        </div>
-    `).join('') : '<p style="text-align:center; color:#666; padding:20px;">كن أول من يترك تقييماً أسطورياً!</p>';
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
 }
 
 // إغلاق النافذة عند الضغط خارجها
 window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
+    if (event.target.className === "modal") {
         event.target.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
-        document.body.style.overflow = "auto";
     }
 }
 function searchProducts() {
