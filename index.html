@@ -404,6 +404,30 @@
             ثقتكم هي أغلى ما نملك، لذا نقدم لكم ضماناً ذهبياً وشاملاً على جميع منتجاتنا. في حال حدوث أي عطل، نلتزم بتعويضكم أو استبدال الخدمة فوراً خلال 24 ساعة كحد أقصى لضمان استمرار تجربتكم بدون انقطاع.
         </p>
     </div>
+    <div id="desc_netflix" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('desc_netflix')">&times;</span>
+        <h3 style="color:#00d2ff; margin-bottom:15px;">Netflix Premium 📺</h3>
+        <ul style="text-align: right; color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+            <li>✅ اشتراك رسمي بجودة 4K Ultra HD</li>
+            <li>✅ شاشة خاصة بك برمز قفل (PIN)</li>
+            <li>✅ ضمان كامل طوال فترة الاشتراك</li>
+        </ul>
+    </div>
+</div>
+
+<div id="reviews_modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('reviews_modal')">&times;</span>
+        <h3 id="modal_product_title" style="color:#00d2ff;">التقييمات</h3>
+        <div id="reviews_container" style="max-height: 300px; overflow-y: auto; margin-bottom: 15px;"></div>
+        <hr style="border: 0.5px solid #333; margin-bottom: 15px;">
+        <input type="text" id="reviewer_name" placeholder="اسمك الكريم" style="width: 100%; padding: 10px; margin-bottom: 10px; background: #222; border: 1px solid #444; color: white; border-radius: 8px;">
+        <textarea id="reviewer_msg" placeholder="اكتب رأيك بالمنتج..." style="width: 100%; padding: 10px; height: 80px; background: #222; border: 1px solid #444; color: white; border-radius: 8px; margin-bottom: 10px;"></textarea>
+        <button onclick="submitReview()" class="btn-order" style="width: 100%;">إرسال التقييم</button>
+    </div>
+</div>
+    
 </div>
 </footer>
 <script>
