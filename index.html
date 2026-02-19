@@ -31,7 +31,7 @@
             position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { font-size: 1.6rem; font-weight: bold; }
+        .logo { font-size: 1.6rem; font-weight: bold; }a
         .logo span { color: var(--primary); }
 
         .products-grid {
@@ -378,48 +378,50 @@
         <div class="footer-section">
             <h4 style="color:#fff; margin-bottom:20px; border-bottom: 2px solid #00d2ff; display: inline-block; padding-bottom: 5px;">روابط هامة</h4>
             <a href="#" class="footer-contact">الرئيسية</a>
-            <a href="javascript:void(0)" onclick="openModal('warrantyModal')" class="footer-contact">سياسة الضمان</a>      
-             <a href="javascript:void(0)" onclick="openModal('openModal')" class="footer-contact">من نحن</a>
+            <a href="javascript:void(0)" onclick="openModal('warrantyModal')" class="footer-contact">سياسة الضمان</a>
+            <a href="javascript:void(0)" onclick="openModal('aboutModal')" class="footer-contact">من نحن</a>
         </div>
     </div>
     
     <div style="text-align:center; margin-top:50px; color:#555; font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px;">
         &copy; 2026 جميع الحقوق محفوظة لـ QUELLER.STORE
     </div>
-  <div id="aboutModal" class="modal">
+    <div id="aboutModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('aboutModal')">&times;</span>
-        <h3>من نحن</h3>
-        <p>متجر QUELLER.STORE متخصص في توفير الاشتراكات الرقمية بأفضل الأسعار وأعلى جودة.</p>
+        <h3 style="color:#00d2ff; margin-bottom:15px; font-size:1.5rem;">من نحن</h3>
+        <p style="line-height:1.8; color:#a0a0a5; font-size:0.95rem;">
+            مرحباً بكم في <b>Queller Store</b>. نحن فريق متخصص يسعى لتوفير أفضل الحلول الرقمية والاشتراكات بأعلى مستويات الموثوقية. هدفنا هو توفير تجربة ترفيهية مميزة بأسعار تنافسية مع دعم فني متكامل يضع العميل دائماً في المقام الأول.
+        </p>
     </div>
 </div>
 
 <div id="warrantyModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('warrantyModal')">&times;</span>
-        <h3>سياسة الضمان</h3>
-        <p>نضمن لك استمرار الاشتراك طوال المدة المحددة، وفي حال حدوث مشكلة يتم التعويض فوراً.</p>
+        <h3 style="color:#00d2ff; margin-bottom:15px; font-size:1.5rem;">سياسة الضمان الذهبية</h3>
+        <p style="line-height:1.8; color:#a0a0a5; font-size:0.95rem;">
+            ثقتكم هي أغلى ما نملك، لذا نقدم لكم ضماناً ذهبياً وشاملاً على جميع منتجاتنا. في حال حدوث أي عطل، نلتزم بتعويضكم أو استبدال الخدمة فوراً خلال 24 ساعة كحد أقصى لضمان استمرار تجربتكم بدون انقطاع.
+        </p>
     </div>
 </div>
-    
 </footer>
 <script>
-    
-// دالة فتح النوافذ المنبثقة (المصححة)
-function openModal(id) {
-    const modal = document.getElementById(id);
+// دالة فتح النوافذ المنبثقة
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'flex'; // تأكدنا من وجود علامات التنصيص هنا
-        document.body.style.overflow = 'hidden'; 
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // منع التمرير خلف النافذة
     }
 }
 
 // دالة إغلاق النوافذ
-function closeModal(id) {
-    const modal = document.getElementById(id);
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 }
 
