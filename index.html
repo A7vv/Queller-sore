@@ -192,6 +192,23 @@
         .close-btn:hover { color: #00d2ff; }
         
     </style>
+    .btn-info {
+    flex: 1;
+    background: rgba(0, 210, 255, 0.05);
+    color: #00d2ff;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: 'Cairo', sans-serif;
+    transition: 0.3s ease;
+}
+.btn-info:hover {
+    background: #00d2ff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
 </head>
 <body>
 
@@ -224,6 +241,10 @@
                 <div class="rating-count">158 تقييم</div>
             </div>
             <div class="price">35 ر.س</div>
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+    <button onclick="openModal('desc_netflix')" class="btn-info">وصف المنتج</button>
+    <button onclick="openModal('reviews_netflix')" class="btn-info">التقييمات</button>
+</div>
             <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+نيتفلكس" class="btn-order">اطلب الآن</a>
         </div>
     </div>
@@ -305,6 +326,10 @@
                 <div class="rating-count">120 تقييم</div>
             </div>
             <div class="price">25 ر.س</div>
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+    <button onclick="openModal('desc_shahid')" class="btn-info">وصف المنتج</button>
+    <button onclick="openModal('reviews_shahid')" class="btn-info">التقييمات</button>
+</div>
             <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+اشتراك+شاهد" class="btn-order">اطلب الآن</a>
         </div>
     </div>
@@ -359,6 +384,37 @@
         <p style="line-height:1.8; color:#a0a0a5; font-size:0.95rem;">
             ثقتكم هي أغلى ما نملك، لذا نقدم لكم ضماناً ذهبياً وشاملاً على جميع منتجاتنا. في حال حدوث أي عطل، نلتزم بتعويضكم أو استبدال الخدمة فوراً خلال 24 ساعة كحد أقصى لضمان استمرار تجربتكم بدون انقطاع.
         </p>
+    </div>
+</div>
+    <div id="desc_netflix" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('desc_netflix')">&times;</span>
+        <h3 style="color:#00d2ff; margin-bottom:15px;">Netflix Premium 🎬</h3>
+        <p style="color:#a0a0a5; line-height:1.8; text-align:right; direction:rtl;">استمتع بأعلى دقة 4K مع حساب رسمي ومستقر 100%. يدعم جميع الأجهزة والترجمة العربية، مع ضمان ذهبي كامل فترة الاشتراك.</p>
+    </div>
+</div>
+
+<div id="reviews_netflix" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('reviews_netflix')">&times;</span>
+        <h3 style="color:#ffc107; margin-bottom:15px;">تقييمات الأساطير ⭐</h3>
+        <p style="color:#a0a0a5; text-align:right; direction:rtl;"><b>محمد:</b> "أفضل متجر تعاملت معه، الحساب شغال زي اللوز! ⭐⭐⭐⭐⭐"</p>
+    </div>
+</div>
+
+<div id="desc_shahid" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('desc_shahid')">&times;</span>
+        <h3 style="color:#00d2ff; margin-bottom:15px;">Shahid VIP الرياضية ⚽</h3>
+        <p style="color:#a0a0a5; line-height:1.8; text-align:right; direction:rtl;">تابع مباريات الدوري السعودي والمنتخب بجودة عالية. تفعيل رسمي ومضمون يشتغل على الجوال والشاشات بضمان كامل.</p>
+    </div>
+</div>
+
+<div id="reviews_shahid" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('reviews_shahid')">&times;</span>
+        <h3 style="color:#ffc107; margin-bottom:15px;">آراء المشتركين ⭐</h3>
+        <p style="color:#a0a0a5; text-align:right; direction:rtl;"><b>خالد:</b> "تفعيل سريع وسعر ولا أروع، شكراً كويلر."</p>
     </div>
 </div>
 </footer>
