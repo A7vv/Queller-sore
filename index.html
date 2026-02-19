@@ -190,7 +190,49 @@
             transition: 0.3s;
         }
         .close-btn:hover { color: #00d2ff; }
-        
+
+/* تنسيق حاوية الأزرار */
+.product-btns-container {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+    justify-content: center;
+}
+
+/* تصميم الأزرار الزجاجي الحديث */
+.btn-info {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03); /* شفافية خفيفة */
+    border: 1px solid rgba(0, 210, 255, 0.2); /* إطار أزرق باهت */
+    color: #00d2ff;
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* تأثير التوهج عند تمرير الماوس */
+.btn-info:hover {
+    background: #00d2ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    transform: translateY(-3px); /* رفعة خفيفة للأعلى */
+}
+
+/* تنسيق النوافذ المنبثقة (Modals) لتكون عصرية */
+.modal-content {
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 24px !important;
+    backdrop-filter: blur(10px); /* تأثير ضبابي خلف النافذة */
+}
     </style>
 </head>
 <body>
@@ -215,6 +257,7 @@
 </a>
 
 <div class="products-grid">
+    
    <div class="product-card">
     <img src="https://c.top4top.io/p_3702ejwfm1.gif" class="product-img">
     <div class="product-content">
@@ -382,10 +425,58 @@ function closeModal(modalId) {
     }
 }
 
+// نظام التقييمات الاحترافي
+let currentProductId = '';
+
+function openReviews(productId, productName) {
+    currentProductId = productId;
+    const title = document.getElementById('modal_product_title');
+    if (title) title.innerText = `تقييمات ${productName} ⭐`;
+    displayReviews(); // عرض التقييمات المخزنة
+    openModal('reviews_modal'); // فتح نافذة التقييمات
+}
+
+function submitReview() {
+    const nameInput = document.getElementById('reviewer_name');
+    const msgInput = document.getElementById('reviewer_msg');
+    const name = nameInput.value.trim();
+    const msg = msgInput.value.trim();
+    
+    if(!name || !msg) return alert("يا بطل، اكتب اسمك ورأيك أولاً!");
+
+    const review = { name, msg, date: new Date().toLocaleDateString('ar-SA') };
+    let storeData = JSON.parse(localStorage.getItem('queller_reviews') || '{}');
+    
+    if(!storeData[currentProductId]) storeData[currentProductId] = [];
+    storeData[currentProductId].unshift(review);
+    localStorage.setItem('queller_reviews', JSON.stringify(storeData));
+    
+    nameInput.value = '';
+    msgInput.value = '';
+    displayReviews();
+}
+
+function displayReviews() {
+    const container = document.getElementById('reviews_container');
+    const storeData = JSON.parse(localStorage.getItem('queller_reviews') || '{}');
+    const reviews = storeData[currentProductId] || [];
+    
+    container.innerHTML = reviews.length ? reviews.map(r => `
+        <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:10px; margin-bottom:8px; border-right:3px solid #00d2ff; text-align:right;">
+            <strong style="color:#00d2ff; font-size:0.9rem;">${r.name}</strong>
+            <p style="margin:5px 0; font-size:0.85rem; color:#eee;">${r.msg}</p>
+            <small style="color:#555; font-size:0.7rem;">${r.date}</small>
+        </div>
+    `).join('') : '<p style="text-align:center; color:#555; padding:10px;">لا توجد تقييمات بعد.. كن الأول!</p>';
+}
+
 // إغلاق النافذة عند الضغط خارج منطقة النص
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
         document.body.style.overflow = "auto";
     }
 }
