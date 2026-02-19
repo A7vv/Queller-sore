@@ -505,23 +505,6 @@ window.onclick = function(event) {
 }
 </script>
     
-function searchProducts() {
-    // جلب النص من مربع البحث الذي أضفته في السطر 101
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    // جلب جميع بطاقات المنتجات الموزعة في الصفحة
-    let cards = document.getElementsByClassName('product-card');
-
-    for (let i = 0; i < cards.length; i++) {
-        // قراءة اسم المنتج (مثل Netflix أو Spotify)
-        let title = cards[i].querySelector('.product-title').innerText.toLowerCase();
-        
-        // إظهار المنتج إذا كان الاسم يحتوي على ما كتبه العميل، وإلا يتم إخفاؤه
-        if (title.includes(input)) {
-            cards[i].style.display = ""; 
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
 }
 </script>
 </body>
