@@ -8,23 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-    /* تأثير خاص بالإيميل والرقم لجعلهم يتحركون */
-    .footer-section p, .footer-section a:not(.social-icon) {
-        display: block !important;
-        transition: all 0.3s ease-in-out !important;
+/* تنسيق كلاسيكي فخم للإيميل والرقم */
+    .footer-section p, .footer-section a {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        color: #ffffff !important; /* أبيض صريح كالشكل القديم */
+        transition: 0.4s ease !important; /* نعومة في ظهور الضوء */
         cursor: pointer !important;
-        color: #a0a0a5 !important;
-        text-decoration: none !important;
         margin-bottom: 15px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
     }
 
-    /* التوهج والحركة الجانبية عند تمرير الماوس */
-    .footer-section p:hover, .footer-section a:not(.social-icon):hover {
+    /* توهج أزرق خافت جداً وراقي عند لمس الماوس */
+    .footer-section p:hover, .footer-section a:hover {
+        color: var(--primary) !important; 
+        /* ظل خفيف جداً (Soft Glow) وليس ساطعاً */
+        text-shadow: 0 0 5px rgba(0, 212, 255, 0.5) !important; 
+        transform: none !important; /* ثبات كامل بدون حركة */
+    }
+
+    /* لون الأيقونات الجانبية */
+    .footer-section p i, .footer-section a i {
         color: var(--primary) !important;
-        transform: translateX(-10px) !important; /* حركة انسيابية لليمن لجذب الانتباه */
-        text-shadow: 0 0 15px var(--primary) !important; /* الظل المضيء المماثل للمنتجات */
+        font-size: 1.1rem !important;
+        opacity: 0.9;
     }
-
     .footer-section p i {
         color: var(--primary) !important; /* جعل الأيقونة سماوية دائماً */
         font-size: 1.1rem !important;
