@@ -91,7 +91,27 @@
     flex: 1.5;
     margin-top: 0 !important; /* إلغاء المارجن العلوي القديم */
 }
-        
+/* تنسيق حجم النافذة المنبثقة لمنع الحجم المبالغ فيه */
+.modal-content {
+    background: linear-gradient(145deg, #1a1a1a, #111); /* لون الخلفية الداكن */
+    padding: 30px;
+    border: 1px solid var(--primary); /* إطار بلون المتجر الرئيسي */
+    border-radius: 20px;
+    
+    /* هذا الجزء سيحل مشكلة الحجم المبالغ فيه */
+    width: 90%;            /* العرض على الجوال */
+    max-width: 450px;      /* أقصى عرض للنافذة لتبدو متناسقة */
+    
+    text-align: center;    /* توسيط النص */
+    position: relative;
+    animation: slideDown 0.4s ease; /* حركة الدخول من الأعلى */
+}
+
+/* حركة الأنيميشن لجعل الظهور احترافي */
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}        
     ------------------------------------------------------------------------------------------------
         .product-card:hover {
             border-color: var(--primary);
