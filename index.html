@@ -7,122 +7,100 @@
     <title>Queller Store | الفخامة الرقمية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* 1. إظهار الأقسام فوق البحث */
-.store-categories {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    margin: 30px auto 10px auto !important;
-    flex-wrap: wrap !important;
-}
+<style>
+    /* إرجاع الألوان للنصوص (أسماء المنتجات والأسعار) */
+    .product-info h3 {
+        color: white !important; /* اسم المنتج أبيض */
+        margin-bottom: 10px !important;
+        font-size: 1.1rem !important;
+    }
 
-.cat-btn {
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: white !important;
-    border: 1px solid var(--primary) !important;
-    padding: 8px 22px !important;
-    border-radius: 50px !important;
-    cursor: pointer !important;
-    font-family: 'Cairo', sans-serif !important;
-    transition: 0.3s ease !important;
-}
+    .price {
+        color: var(--primary) !important; /* السعر باللون السماوي المميز */
+        font-weight: bold !important;
+        font-size: 1.2rem !important;
+        display: block !important;
+        margin-bottom: 15px !important;
+    }
 
-.cat-btn.active, .cat-btn:hover {
-    background: var(--primary) !important;
-    color: #000 !important;
-    box-shadow: 0 0 15px var(--primary) !important;
-}
+    .product-info p {
+        color: #aaa !important; /* وصف المنتج بالرمادي الفاتح */
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
 
-/* 2. إصلاح شبكة المنتجات (لظهورها بجانب بعضها) */
-.products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: 25px !important;
-    padding: 40px 5% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-}
+    .buy-btn {
+        background: transparent !important;
+        color: var(--primary) !important;
+        border: 1px solid var(--primary) !important;
+        width: 100% !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        transition: 0.3s !important;
+    }
 
-/* 3. إعادة الظل الأزرق الاحترافي عند تحريك الماوس */
-.product-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary) !important;
-    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2) !important;
-}
-        /* كود إعادة إحياء المتجر وتنسيق الأقسام */
-.store-categories {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    margin: 30px auto 10px auto !important;
-    flex-wrap: wrap !important;
-}
+    .buy-btn:hover {
+        background: var(--primary) !important;
+        color: black !important;
+    }
+    :root {
+        --primary: #00d2ff;
+        --dark: #0a0a0a;
+        --card-bg: #151515;
+    }
 
-.cat-btn {
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: white !important;
-    border: 1px solid var(--primary) !important;
-    padding: 8px 22px !important;
-    border-radius: 50px !important;
-    cursor: pointer !important;
-    font-family: 'Cairo', sans-serif !important;
-    transition: 0.3s ease !important;
-}
+    /* 1. إظهار الأقسام بشكل فخم وعرضي */
+    .store-categories {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin: 20px 0 30px 0 !important;
+        flex-wrap: wrap !important;
+    }
 
-.cat-btn.active, .cat-btn:hover {
-    background: var(--primary) !important;
-    color: #000 !important;
-    box-shadow: 0 0 15px var(--primary) !important;
-}
+    .cat-btn {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: white !important;
+        border: 1px solid var(--primary) !important;
+        padding: 10px 25px !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        font-family: 'Cairo', sans-serif !important;
+        transition: 0.3s ease !important;
+    }
 
-.products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: 25px !important;
-    padding: 40px 5% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-}
-        :root {
-            --primary: #00d2ff;
-            --bg-deep: #0a0a0b;
-            --card-bg: #141417;
-            --text-gray: #a0a0a5;
-            --star-color: #ffc107;
-        }
-        body {
-            background-color: var(--bg-deep);
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            margin: 0; padding: 0;
-            scroll-behavior: smooth;
-        }
+    .cat-btn.active, .cat-btn:hover {
+        background: var(--primary) !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px var(--primary) !important;
+    }
 
-        nav {
-            padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 10, 11, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-     }
-      .logo { 
-    font-size: 1.6rem; 
-    font-weight: bold; 
-    color: #ffffff; /* يضمن بقاء Queller باللون الأبيض */
-}
+    /* 2. ترتيب المنتجات بجانب بعضها (الشبكة) */
+    .products-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 25px !important;
+        padding: 40px 5% !important;
+    }
 
-.logo span { 
-    color: #00d2ff !important; /* يضمن تحول .store للون الأزرق فوراً */
-}
-<div class="store-categories">
-    <button class="cat-btn active" onclick="filterCategory('all')">الرئيسية</button>
-    <button class="cat-btn" onclick="filterCategory('subscriptions')">الاشتراكات</button>
-    <button class="cat-btn" onclick="filterCategory('services')">الخدمات</button>
-    <button class="cat-btn" onclick="filterCategory('games')">حسابات الألعاب</button>
+    /* 3. إعادة الظل الأزرق والارتفاع (Hover) */
+    .product-card {
+        background: var(--card-bg) !important;
+        border: 1px solid #333 !important;
+        border-radius: 15px !important;
+        transition: 0.4s ease !important;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px) !important;
+        border-color: var(--primary) !important;
+        box-shadow: 0 10px 30px rgba(0, 210, 255, 0.4) !important;
+    }
+</style>
+
 </div>
-        
+    
 /* تنسيق حاوية الأزرار لجعلها متجاورة */
 .product-btns-container {
     display: flex;
@@ -181,7 +159,7 @@
     from { transform: translateY(-30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }        
-    ------------------------------------------------------------------------------------------------
+    
        /* كود التفاعل الاحترافي عند تمرير الماوس */
 .product-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
