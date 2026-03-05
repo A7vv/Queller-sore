@@ -8,25 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-/* تنسيق كلاسيكي فخم للإيميل والرقم */
+        
+/* تنسيق كلاسيكي ثابت: الأيقونة بجانب النص تماماً */
     .footer-section p, .footer-section a {
         display: flex !important;
         align-items: center !important;
-        gap: 12px !important;
-        color: #ffffff !important; /* أبيض صريح كالشكل القديم */
-        transition: 0.4s ease !important; /* نعومة في ظهور الضوء */
+        justify-content: flex-start !important;
+        gap: 10px !important; /* مسافة بسيطة ومرتبة */
+        color: #ffffff !important; /* الأبيض الفخم القديم */
+        transition: 0.3s ease !important;
         cursor: pointer !important;
-        margin-bottom: 15px !important;
-        font-size: 15px !important;
-        font-weight: 500 !important;
+        margin-bottom: 12px !important;
+        text-decoration: none !important;
     }
 
-    /* توهج أزرق خافت جداً وراقي عند لمس الماوس */
+    /* توهج أزرق خفيف جداً (Glow) بدون أي حركة جانبية */
     .footer-section p:hover, .footer-section a:hover {
-        color: var(--primary) !important; 
-        /* ظل خفيف جداً (Soft Glow) وليس ساطعاً */
-        text-shadow: 0 0 5px rgba(0, 212, 255, 0.5) !important; 
-        transform: none !important; /* ثبات كامل بدون حركة */
+        color: var(--primary) !important;
+        text-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
+        transform: none !important; /* ثبات كامل كما طلبت */
+    }
+
+    /* ضمان بقاء الأيقونة في مكانها الصحيح */
+    .footer-section p i, .footer-section a i {
+        color: var(--primary) !important;
+        font-size: 1rem !important;
+        width: 20px !important; /* توحيد مساحة الأيقونة لمنع التداخل */
+        text-align: center !important;
     }
 
     /* لون الأيقونات الجانبية */
@@ -481,7 +489,7 @@
         <div class="footer-section">
             <h4 style="color:#fff; margin-bottom:20px; border-bottom: 2px solid #00d2ff; display: inline-block; padding-bottom: 5px;">تواصل معنا</h4>
             <a href="mailto:afmasrj@gmail.com" class="footer-contact"><i class="fas fa-envelope"></i> afmasrj@gmail.com</a>
-            <a href="https://wa.me/966502915924" class="footer-contact"><i class="fab fa-whatsapp"></i> 050 291 5924</a>
+            <a href="https://wa.me/966502915924" class="footer-contact"><i class="fas fa-phone-alt"></i> 050 291 5924</a>
         </div>
 
         <div class="footer-section">
