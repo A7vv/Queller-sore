@@ -8,32 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* التنسيق العالمي للبريد والرقم والروابط */
-    .footer-section p, .footer-section a:not(.social-icon) {
+        /* إظهار وتنسيق الأقسام فوق البحث */
+    .store-categories {
         display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 10px !important; /* مسافة ثابتة تمنع التداخل */
-        color: #ffffff !important;
-        transition: 0.3s ease !important;
-        margin-bottom: 15px !important;
-        text-decoration: none !important;
-        width: fit-content !important; /* يمنع النص من الطيران لبعيد */
+        justify-content: center !important;
+        gap: 15px !important;
+        margin: 25px 0 35px 0 !important;
+        flex-wrap: wrap !important;
+        position: relative !important;
+        z-index: 100 !important;
     }
 
-    /* التوهج الهادئ جداً بدون حركة */
-    .footer-section p:hover, .footer-section a:not(.social-icon):hover {
-        color: var(--primary) !important;
-        text-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
-    }
-
-    /* ضبط مكان وحجم الأيقونة */
-    .footer-section p i, .footer-section a:not(.social-icon) i {
-        color: var(--primary) !important;
-        font-size: 1.1rem !important;
-        width: 25px !important; /* توحيد العرض لترتيب النص بجانبه تماماً */
-        text-align: center !important;
-    }
     .cat-btn {
         background: rgba(255, 255, 255, 0.05) !important;
         color: white !important;
@@ -374,8 +359,7 @@
 </div>
     
 <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+منتجاتكم" class="whatsapp-float" target="_blank">
-    <i class="fas fa-phone-alt"></i>
-    
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <div class="products-grid">
@@ -475,7 +459,7 @@
         <div class="footer-section">
             <h4 style="color:#fff; margin-bottom:20px; border-bottom: 2px solid #00d2ff; display: inline-block; padding-bottom: 5px;">تواصل معنا</h4>
             <a href="mailto:afmasrj@gmail.com" class="footer-contact"><i class="fas fa-envelope"></i> afmasrj@gmail.com</a>
-            <a href="https://wa.me/966502915924" class="footer-contact"><i class="fas fa-phone-alt"></i> 050 291 5924</a>
+            <a href="https://wa.me/966502915924" class="footer-contact"><i class="fab fa-whatsapp"></i> 050 291 5924</a>
         </div>
 
         <div class="footer-section">
