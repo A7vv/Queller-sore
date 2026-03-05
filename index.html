@@ -8,6 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* إظهار وتنسيق الأقسام فوق البحث */
+    .store-categories {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin: 25px 0 35px 0 !important;
+        flex-wrap: wrap !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+
+    .cat-btn {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: white !important;
+        border: 1px solid var(--primary) !important;
+        padding: 10px 25px !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        font-family: 'Cairo', sans-serif !important;
+        transition: 0.3s ease !important;
+    }
+
+    .cat-btn.active, .cat-btn:hover {
+        background: var(--primary) !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px var(--primary) !important;
+    }
         :root {
             --primary: #00d2ff;
             --bg-deep: #0a0a0b;
