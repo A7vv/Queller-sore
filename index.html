@@ -30,7 +30,7 @@
         transition: 0.3s ease !important;
     }
 
-    .cat-btn.active, .cat-btn:hover {
+ .cat-btn:hover, .cat-btn.active {
         background: var(--primary) !important;
         color: #000 !important;
         box-shadow: 0 0 15px var(--primary) !important;
@@ -364,7 +364,7 @@
 
 <div class="products-grid">
     
-  <div class="product-card">
+  <div class="product-card subscriptions">
     <img src="https://up6.cc/2026/02/177184339754362.png" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك نتفلكس | مشترك + خاص</div>
@@ -375,7 +375,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://g.top4top.io/p_3716dkboz1.jpeg" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك يوتيوب بريميوم</div>
@@ -386,7 +386,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://up6.cc/2026/02/177184308061753.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك دسكورد نيترو</div>
@@ -397,7 +397,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5037" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك سبوتيفاي بريميوم</div>
@@ -408,7 +408,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card games">
     <img src="https://h.top4top.io/p_3702l5yyx1.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">حسابات ستيم (Steam)</div>
@@ -419,7 +419,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5026" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك كانفا برو | السنوي</div>
@@ -430,7 +430,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5032" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك شاهد العادي+الرياضي | مشترك+خاص</div>
@@ -441,7 +441,7 @@
     </div>
 </div>
 
-   <div class="product-card">
+   <div class="product-card services">
     <img src="https://i.top4top.io/p_3716x4f031.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">خدمة تسريع جهاز الكمبيوتر</div>
@@ -551,6 +551,30 @@ function searchProducts() {
         }
     }
 }
+    function filterCategory(category) {
+    // 1. تحديث شكل الأزرار (إزالة اللون الأزرق من الكل ووضعه للمختار)
+    const buttons = document.querySelectorAll('.cat-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // إضافة اللون للزر الذي ضغطت عليه حالياً
+    event.currentTarget.classList.add('active');
+
+    // 2. تصفية المنتجات (إظهار وإخفاء)
+    const products = document.querySelectorAll('.product-card');
+    products.forEach(product => {
+        if (category === 'all') {
+            product.style.display = 'block';
+        } else {
+            // يظهر المنتج فقط إذا كان يحتوي على اسم القسم في الكلاس الخاص به
+            if (product.classList.contains(category)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        }
+    });
+}
+    
 </script>
 </body>
 </html>
