@@ -8,31 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* تأثير خاص بالإيميل والرقم */
-    .footer-section p, .footer-section a {
-        display: inline-block !important;
-        transition: all 0.3s ease !important;
+      /* تنسيق خاص بقسم تواصل معنا (الإيميل والرقم) */
+    .footer-section p {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        color: #a0a0a5 !important;
+        transition: 0.3s !important;
         cursor: pointer !important;
-        color: #a0a0a5 !important; /* لون هادئ */
-        text-decoration: none !important;
+        margin-bottom: 15px !important;
     }
 
-    /* التوهج الأزرق عند لمس الماوس */
-    .footer-section p:hover, .footer-section a:hover {
+    /* تأثير التوهج الأزرق عند لمس الماوس */
+    .footer-section p:hover {
         color: var(--primary) !important;
-        text-shadow: 0 0 15px var(--primary) !important;
-        transform: translateY(-2px) !important; /* حركة خفيفة للأعلى */
+        text-shadow: 0 0 10px var(--primary) !important;
+        transform: translateX(-5px) !important;
     }
-        
-        /* إظهار وتنسيق الأقسام فوق البحث */
-    .store-categories {
-        display: flex !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        margin: 25px 0 35px 0 !important;
-        flex-wrap: wrap !important;
-        position: relative !important;
-        z-index: 100 !important;
+
+    .footer-section p i {
+        color: var(--primary) !important; /* جعل الأيقونة سماوية دائماً */
+        font-size: 1.1rem !important;
     }
 
     .cat-btn {
