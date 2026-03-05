@@ -8,46 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        
-/* تنسيق كلاسيكي ثابت: الأيقونة بجانب النص تماماً */
-    .footer-section p, .footer-section a {
+        /* التنسيق العالمي للبريد والرقم والروابط */
+    .footer-section p, .footer-section a:not(.social-icon) {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        gap: 10px !important; /* مسافة بسيطة ومرتبة */
-        color: #ffffff !important; /* الأبيض الفخم القديم */
+        gap: 10px !important; /* مسافة ثابتة تمنع التداخل */
+        color: #ffffff !important;
         transition: 0.3s ease !important;
-        cursor: pointer !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 15px !important;
         text-decoration: none !important;
+        width: fit-content !important; /* يمنع النص من الطيران لبعيد */
     }
 
-    /* توهج أزرق خفيف جداً (Glow) بدون أي حركة جانبية */
-    .footer-section p:hover, .footer-section a:hover {
+    /* التوهج الهادئ جداً بدون حركة */
+    .footer-section p:hover, .footer-section a:not(.social-icon):hover {
         color: var(--primary) !important;
         text-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
-        transform: none !important; /* ثبات كامل كما طلبت */
     }
 
-    /* ضمان بقاء الأيقونة في مكانها الصحيح */
-    .footer-section p i, .footer-section a i {
+    /* ضبط مكان وحجم الأيقونة */
+    .footer-section p i, .footer-section a:not(.social-icon) i {
         color: var(--primary) !important;
-        font-size: 1rem !important;
-        width: 20px !important; /* توحيد مساحة الأيقونة لمنع التداخل */
+        font-size: 1.1rem !important;
+        width: 25px !important; /* توحيد العرض لترتيب النص بجانبه تماماً */
         text-align: center !important;
     }
-
-    /* لون الأيقونات الجانبية */
-    .footer-section p i, .footer-section a i {
-        color: var(--primary) !important;
-        font-size: 1.1rem !important;
-        opacity: 0.9;
-    }
-    .footer-section p i {
-        color: var(--primary) !important; /* جعل الأيقونة سماوية دائماً */
-        font-size: 1.1rem !important;
-    }
-
     .cat-btn {
         background: rgba(255, 255, 255, 0.05) !important;
         color: white !important;
