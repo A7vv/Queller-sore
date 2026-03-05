@@ -91,16 +91,21 @@
     flex: 1.5;
     margin-top: 0 !important; /* إلغاء المارجن العلوي القديم */
 }
-/* تنسيق حجم النافذة المنبثقة لمنع الحجم المبالغ فيه */
+.modal { display: flex; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; display: none; }
 .modal-content {
     background: linear-gradient(145deg, #1a1a1a, #111); /* لون الخلفية الداكن */
     padding: 30px;
     border: 1px solid var(--primary); /* إطار بلون المتجر الرئيسي */
     border-radius: 20px;
     
-    /* هذا الجزء سيحل مشكلة الحجم المبالغ فيه */
-    width: 90%;            /* العرض على الجوال */
-    max-width: 450px;      /* أقصى عرض للنافذة لتبدو متناسقة */
+    /* الحل النهائي لضبط المقاس */
+    width: 90% !important;
+    max-width: 450px !important;
+    height: fit-content !important; /* يجعل الطول على قد الكلام فقط */
+    min-height: auto !important;    /* يلغي أي طول أدنى قديم */
+    margin: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
     
     text-align: center;    /* توسيط النص */
     position: relative;
