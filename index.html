@@ -8,6 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* تأثيرات احترافية لروابط وتواصل footer */
+    .footer-section a, .footer-section p {
+        display: block !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+        text-decoration: none !important;
+        color: #a0a0a5 !important; /* لون رمادي هادئ في البداية */
+        margin-bottom: 10px !important;
+    }
+
+    /* التأثير عند مرور الماوس: توهج أزرق وحركة جانبية */
+    .footer-section a:hover, .footer-section p:hover {
+        color: var(--primary) !important; /* التحول للسماوي */
+        transform: translateX(-8px) !important; /* حركة بسيطة لليمين لجذب الانتباه */
+        text-shadow: 0 0 15px var(--primary) !important; /* الظل المضيء المماثل للمنتجات */
+    }
+
+    /* إضافة أيقونة سهم صغيرة تظهر عند التأشير فقط */
+    .footer-section a::before {
+        content: '←';
+        margin-left: 10px;
+        opacity: 0;
+        transition: 0.3s;
+        color: var(--primary);
+    }
+
+    .footer-section a:hover::before {
+        opacity: 1;
+    }
         /* إظهار وتنسيق الأقسام فوق البحث */
     .store-categories {
         display: flex !important;
