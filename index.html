@@ -8,23 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-      /* تنسيق خاص بقسم تواصل معنا (الإيميل والرقم) */
-    .footer-section p {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 10px !important;
-        color: #a0a0a5 !important;
-        transition: 0.3s !important;
+    /* تأثير خاص بالإيميل والرقم لجعلهم يتحركون */
+    .footer-section p, .footer-section a:not(.social-icon) {
+        display: block !important;
+        transition: all 0.3s ease-in-out !important;
         cursor: pointer !important;
+        color: #a0a0a5 !important;
+        text-decoration: none !important;
         margin-bottom: 15px !important;
     }
 
-    /* تأثير التوهج الأزرق عند لمس الماوس */
-    .footer-section p:hover {
+    /* التوهج والحركة الجانبية عند تمرير الماوس */
+    .footer-section p:hover, .footer-section a:not(.social-icon):hover {
         color: var(--primary) !important;
-        text-shadow: 0 0 10px var(--primary) !important;
-        transform: translateX(-5px) !important;
+        transform: translateX(-10px) !important; /* حركة انسيابية لليمن لجذب الانتباه */
+        text-shadow: 0 0 15px var(--primary) !important; /* الظل المضيء المماثل للمنتجات */
     }
 
     .footer-section p i {
