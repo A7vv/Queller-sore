@@ -118,11 +118,17 @@
     to { transform: translateY(0); opacity: 1; }
 }        
     ------------------------------------------------------------------------------------------------
-        .product-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-        }
+       /* كود التفاعل الاحترافي عند تمرير الماوس */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.product-card:hover {
+    transform: translateY(-12px) !important; /* قفزة البطاقة للأعلى */
+    border-color: var(--primary) !important; /* تغيير لون الإطار للون متجرك */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important; /* ظل يعطي إيحاء بالارتفاع */
+    cursor: pointer;
+}
 
         .product-img { width: 100%; height: 180px; object-fit: cover; background: #222; }
 
