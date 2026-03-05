@@ -8,6 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* تأثير خاص بالإيميل والرقم */
+    .footer-section p, .footer-section a {
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+        color: #a0a0a5 !important; /* لون هادئ */
+        text-decoration: none !important;
+    }
+
+    /* التوهج الأزرق عند لمس الماوس */
+    .footer-section p:hover, .footer-section a:hover {
+        color: var(--primary) !important;
+        text-shadow: 0 0 15px var(--primary) !important;
+        transform: translateY(-2px) !important; /* حركة خفيفة للأعلى */
+    }
+        
         /* إظهار وتنسيق الأقسام فوق البحث */
     .store-categories {
         display: flex !important;
@@ -359,7 +375,8 @@
 </div>
     
 <a href="https://wa.me/966502915924?text=مرحباً+متجر+Queller%2C+لدي+طلب+أو+استفسار+بخصوص+منتجاتكم" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+    <i class="fas fa-phone-alt"></i>
+    
 </a>
 
 <div class="products-grid">
