@@ -59,6 +59,40 @@
     max-width: 320px;
     margin: auto;
 }
+/* تنسيق حاوية الأزرار لجعلها متجاورة */
+.product-btns-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* زر وصف المنتج الزجاجي */
+.btn-info {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.btn-info:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* تعديل زر الطلب ليناسب التصميم الجديد */
+.btn-order {
+    flex: 1.5;
+    margin-top: 0 !important; /* إلغاء المارجن العلوي القديم */
+}
+        
+    ------------------------------------------------------------------------------------------------
         .product-card:hover {
             border-color: var(--primary);
             transform: translateY(-10px);
@@ -271,7 +305,7 @@
     <div class="product-content">
         <div class="product-title">اشتراك نتفلكس | مشترك + خاص</div>
         <div class="product-btns-container">
-            <button class="btn-info" onclick="openProductModal('نتفلكس بريميوم', '🎬 حسابات رسمية مستقرة 100% <br> 💎 أعلى جودة مشاهدة 4K Ultra HD <br> ✅ ضمان ذهبي كامل واستبدال فوري')">وصف المنتج</button>
+          <button class="btn-info" onclick="openProductModal('نتفلكس بريميوم', '🎬 حسابات رسمية مستقرة 100% <br> 💎 أعلى جودة مشاهدة 4K Ultra HD <br> ✅ ضمان ذهبي كامل واستبدال فوري')">وصف المنتج</button>
             <a href="https://wa.me/966502915924?text=أهلاً+متجر+Queller،+أريد+الاستفسار+عن+نتفلكس" class="btn-order">اطلب الآن</a>
         </div>
     </div>
@@ -396,6 +430,13 @@
         </p>
     </div>
 </div>
+    <div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('productModal')">&times;</span>
+        <h2 id="modalTitle" style="color: var(--primary); margin-bottom: 20px; font-family: 'Cairo';"></h2>
+        <div id="modalDescription" style="line-height: 1.8; color: #fff; text-align: center; font-family: 'Cairo';"></div>
+    </div>
+</div>
 </footer>
 <script>
 function openModal(id) {
@@ -405,7 +446,12 @@ function openModal(id) {
 function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
-
+function openProductModal(title, description) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDescription').innerHTML = description;
+    document.getElementById('productModal').style.display = 'flex';
+} 
+    
 // إغلاق النافذة عند الضغط خارجها
 window.onclick = function(event) {
     if (event.target.className === "modal") {
