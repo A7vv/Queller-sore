@@ -40,6 +40,13 @@
 .logo span { 
     color: #00d2ff !important; /* يضمن تحول .store للون الأزرق فوراً */
 }
+<div class="store-categories">
+    <button class="cat-btn active" onclick="filterCategory('all')">الرئيسية</button>
+    <button class="cat-btn" onclick="filterCategory('subscriptions')">الاشتراكات</button>
+    <button class="cat-btn" onclick="filterCategory('services')">الخدمات</button>
+    <button class="cat-btn" onclick="filterCategory('games')">حسابات الألعاب</button>
+</div>
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -331,7 +338,7 @@
 
 <div class="products-grid">
     
-  <div class="product-card">
+  <div class="product-card subscriptions">
     <img src="https://up6.cc/2026/02/177184339754362.png" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك نتفلكس | مشترك + خاص</div>
@@ -342,7 +349,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://g.top4top.io/p_3716dkboz1.jpeg" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك يوتيوب بريميوم</div>
@@ -353,7 +360,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://up6.cc/2026/02/177184308061753.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك دسكورد نيترو</div>
@@ -364,7 +371,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5037" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك سبوتيفاي بريميوم</div>
@@ -375,7 +382,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card games">
     <img src="https://h.top4top.io/p_3702l5yyx1.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">حسابات ستيم (Steam)</div>
@@ -386,7 +393,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5026" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك كانفا برو | السنوي</div>
@@ -397,7 +404,7 @@
     </div>
 </div>
 
-<div class="product-card">
+<div class="product-card subscriptions">
     <img src="https://fastupload.live/do.php?img=5032" class="product-img">
     <div class="product-content">
         <div class="product-title">اشتراك شاهد العادي+الرياضي | مشترك+خاص</div>
@@ -408,7 +415,7 @@
     </div>
 </div>
 
-   <div class="product-card">
+   <div class="product-card services">
     <img src="https://i.top4top.io/p_3716x4f031.jpg" class="product-img">
     <div class="product-content">
         <div class="product-title">خدمة تسريع جهاز الكمبيوتر</div>
@@ -518,6 +525,32 @@ function searchProducts() {
         }
     }
 }
+// دالة تصفية المنتجات حسب الأقسام
+function filterCategory(category) {
+    // تحديث شكل الأزرار
+    const buttons = document.querySelectorAll('.cat-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // إضافة تمييز للزر المختار
+    if (event) {
+        event.target.classList.add('active');
+    }
+
+    // تصفية البطاقات
+    const cards = document.getElementsByClassName('product-card');
+    for (let card of cards) {
+        if (category === 'all') {
+            card.style.display = "flex";
+        } else {
+            if (card.classList.contains(category)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        }
+    }
+}
+    
 </script>
 </body>
 </html>
