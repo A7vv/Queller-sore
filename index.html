@@ -7,6 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* هذا الكود سيقوم بتقريب الكروت من بعضها وجعلها متناسقة */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* لجعل الكروت في منتصف الصفحة */
+    gap: 20px; /* المسافة بين كل كارت والثاني */
+    padding: 20px;
+}
+
+/* لضمان أن حجم الكروت متساوي دائماً */
+.product-card {
+    width: 300px; /* يمكنك تعديل العرض حسب رغبتك */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
         .store-categories {
             display: flex !important;
             justify-content: center !important;
