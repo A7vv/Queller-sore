@@ -655,29 +655,36 @@ function filterCategory(category) {
     });
 }
 </script>
- <section id="reviews" style="padding: 60px 20px; background: #1a1a1a; min-height: 500px;">
-    <h2 style="text-align: center; color: #00d2ff; font-family: 'Cairo', sans-serif; margin-bottom: 30px;">تقييمات العملاء ⭐</h2>
+ <section id="reviews" style="padding: 60px 20px; background: #1a1a1a; text-align: center; border-top: 2px solid #00d2ff;">
+    <h2 style="color: #00d2ff; font-family: 'Cairo', sans-serif; margin-bottom: 20px;">تقييمات العملاء ⭐</h2>
     
-    <div style="max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 15px;">
+    <button id="show-reviews-btn" onclick="loadCusdis()" style="background: #00d2ff; color: #000; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 18px; transition: 0.3s; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);">
+        اضغط هنا لكتابة أو عرض التقييمات 👇
+    </button>
+
+    <div id="reviews-container" style="display: none; max-width: 800px; margin: 30px auto; background: white; padding: 20px; border-radius: 15px;">
         <div id="cusdis_thread"
           data-host="https://cusdis.com"
           data-app-id="9465774e-0c17-4952-9f33-7226f30d0752"
-          data-page-id="queller_store_final"
+          data-page-id="queller_store_final_v2"
           data-page-url="https://a7vv.github.io/Queller-sore/"
           data-page-title="Queller Store"
         ></div>
     </div>
 
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var script = document.createElement('script');
-                script.src = "https://cusdis.com/js/cusdis.es.js";
-                script.async = true;
-                script.defer = true;
-                document.body.appendChild(script);
-            }, 1000); // تأخير لمدة ثانية واحدة لضمان استقرار الصفحة
-        });
+        function loadCusdis() {
+            // إظهار الحاوية
+            document.getElementById('reviews-container').style.display = 'block';
+            // إخفاء الزر بعد الضغط
+            document.getElementById('show-reviews-btn').style.display = 'none';
+            
+            // تحميل السكريبت يدوياً عند الضغط فقط
+            var script = document.createElement('script');
+            script.src = "https://cusdis.com/js/cusdis.es.js";
+            script.async = true;
+            document.body.appendChild(script);
+        }
     </script>
 </section>
 </body>
